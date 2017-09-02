@@ -1,0 +1,16 @@
+[
+{
+  "modid": "pumpkinspice",
+  "name": "Pumpkin Spice Latte",
+  "description": "For the white gurlz everywhere!",
+  "version": "1.0.0",
+  "mcversion": "1.12.1",
+  "url": "https://minecraft.curseforge.com/projects/pumpkin-spice-latte",
+  "updateUrl": "https://raw.githubusercontent.com/MasterGeneral156/Version/master/PumpkinSpice.json",
+  "authorList": ["TheMasterGeneral"],
+  "credits": "White gurls everywhere",
+  "logoFile": "assets/pumpkinspice/textures/logo.png",
+  "screenshots": [],
+  "dependencies": ["ctdcore"]
+}
+]
