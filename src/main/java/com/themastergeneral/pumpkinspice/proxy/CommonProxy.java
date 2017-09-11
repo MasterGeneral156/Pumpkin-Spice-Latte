@@ -1,5 +1,6 @@
 package com.themastergeneral.pumpkinspice.proxy;
 
+import com.themastergeneral.pumpkinspice.handlers.Crafting;
 import com.themastergeneral.pumpkinspice.items.ModItems;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -11,6 +12,7 @@ public class CommonProxy
 	public void preInit(FMLPreInitializationEvent e) 
     {
 		ModItems.init();
+		Crafting.init();
     }
     public void init(FMLInitializationEvent e) 
     {

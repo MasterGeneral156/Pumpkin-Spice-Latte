@@ -1,6 +1,5 @@
 package com.themastergeneral.pumpkinspice.items;
 
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
