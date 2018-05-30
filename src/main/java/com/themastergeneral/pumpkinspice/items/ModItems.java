@@ -7,6 +7,6 @@ public class ModItems extends RegisterItem {
 	public static LatteItem latte;
 
 	public static void init() {
-		latte = register(new LatteItem(0, false, "latte", PumpkinSpice.MODID));
+		latte = register(new LatteItem(3, 1.0F, false, "latte", PumpkinSpice.MODID));
 	}
 }

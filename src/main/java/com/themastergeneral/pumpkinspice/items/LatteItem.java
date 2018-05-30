@@ -15,8 +15,8 @@ public class LatteItem extends ItemFood implements ItemModelProvider {
 	protected String name;
 	protected String modid;
 
-	public LatteItem(int amount, boolean isWolfFood, String name, String modid) {
-		super(amount, isWolfFood);
+	public LatteItem(int amount, float saturation, boolean isWolfFood, String name, String modid) {
+		super(amount, saturation, isWolfFood);
 		this.name = name;
 		this.modid = modid;
 		this.setUnlocalizedName(name);
