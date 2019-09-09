@@ -1,0 +1,23 @@
+modLoader="javafml" #mandatory
+loaderVersion="[28,)" #mandatory (26 is current forge version)
+issueTrackerURL="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/issues"
+[[mods]] #mandatory
+modId="pumpkinspice" #mandatory
+version="1.0.0" #mandatory
+displayName="Pumpkin Spice Latte" #mandatory
+updateJSONURL="https://raw.githubusercontent.com/MasterGeneral156/Version/master/PumpkinSpice.json" #optional
+displayURL="https://www.curseforge.com/minecraft/mc-mods/pumpkin-spice-latte" #optional
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="examplemod.png" #optional
+# A text field displayed in the mod UI
+credits="White girls, everywhere..." #optional
+# A text field displayed in the mod UI
+authors="TheMasterGeneral" #optional
+# The description text for the mod (multi line!) (#mandatory)
+description="Feeling down? Drink a Pumpkin Spice Latte!"
+[[dependencies.pumpkinspice]]
+    modId="ctdcore"
+    mandatory=true
+    versionRange="[2.0.4,]"
+    ordering="BEFORE"
+    side="BOTH"

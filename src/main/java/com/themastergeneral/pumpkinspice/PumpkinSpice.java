@@ -1,49 +1,49 @@
 package com.themastergeneral.pumpkinspice;
 
-import net.minecraftforge.fml.common.FMLLog;
+import net.minecraft.item.Food;
+import net.minecraft.item.Foods;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 
-import com.themastergeneral.pumpkinspice.proxy.CommonProxy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@Mod(modid = PumpkinSpice.MODID, name = PumpkinSpice.MODNAME, certificateFingerprint = PumpkinSpice.FingerPrint, version = PumpkinSpice.VERSION, dependencies = PumpkinSpice.DEPENDENCIES, updateJSON = PumpkinSpice.JSON)
-public class PumpkinSpice {
-	public static final String MODID = "pumpkinspice";
-	public static final String MODNAME = "Pumpkin Spice Latte";
-	public static final String VERSION = "1.1.2";
-	public static final String DEPENDENCIES = "required-after:ctdcore@[1.3.3,]";
-	public static final String JSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/PumpkinSpice.json";
-	public static final String FingerPrint = "5101015479fe39f20b47f365472250d312a50a57";
+// The value here should match an entry in the META-INF/mods.toml file
+@Mod("pumpkinspice")
+public class PumpkinSpice
+{
+    // Directly reference a log4j logger.
+    private static final Logger LOGGER = LogManager.getLogger();
 
-	@Instance
-	public static PumpkinSpice instance = new PumpkinSpice();
+    public PumpkinSpice() {
+        // Register the setup method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
-	@SidedProxy(clientSide = "com.themastergeneral.pumpkinspice.proxy.ClientProxy", serverSide = "com.themastergeneral.pumpkinspice.proxy.ServerProxy")
-	public static CommonProxy proxy;
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent e) {
-		proxy.preInit(e);
-	}
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        LOGGER.info("Hello from Pumpkin Spice Latte!");
+    }
+    
+    @Mod.EventBusSubscriber(modid = "pumpkinspice", bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class Registration
+    {
+		@SubscribeEvent
+        public static void registerItems(final RegistryEvent.Register<Item> event)
+        {
+			IForgeRegistry<Item> itemRegistry = event.getRegistry();
 
-	@EventHandler
-	public void init(FMLInitializationEvent e) {
-		proxy.init(e);
-	}
-
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent e) {
-		proxy.postInit(e);
-	}
-
-	@EventHandler
-	public void onFingerprintViolation(FMLFingerprintViolationEvent e) {
-		FMLLog.warning("Invalid fingerprint detected for Pumpkin Spice Latte! TheMasterGeneral will not support this version!");
-	}
+			itemRegistry.registerAll(ModItems.latte);
+        }
+    }
 }
