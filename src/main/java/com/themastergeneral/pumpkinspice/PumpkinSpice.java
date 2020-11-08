@@ -1,9 +1,6 @@
 package com.themastergeneral.pumpkinspice;
 
-import net.minecraft.item.Food;
-import net.minecraft.item.Foods;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
