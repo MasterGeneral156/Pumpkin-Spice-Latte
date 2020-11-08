@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[28,)" #mandatory (26 is current forge version)
+loaderVersion="[34,)" #mandatory (26 is current forge version)
 issueTrackerURL="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/issues"
 [[mods]] #mandatory
 modId="pumpkinspice" #mandatory
@@ -15,9 +15,10 @@ credits="White girls, everywhere..." #optional
 authors="TheMasterGeneral" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description="Feeling down? Drink a Pumpkin Spice Latte!"
+license="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/blob/1.16/LICENSE.md"
 [[dependencies.pumpkinspice]]
     modId="ctdcore"
     mandatory=true
-    versionRange="[2.0.4,]"
+    versionRange="[2.0.6,]"
     ordering="BEFORE"
     side="BOTH"
