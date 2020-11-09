@@ -31,9 +31,12 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import org.apache.logging.log4j.LogManager;
@@ -45,12 +48,14 @@ public class PumpkinSpice
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    public static String MODID = "pumpkinspice";
 
     public PumpkinSpice() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in
+        itemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -69,5 +74,12 @@ public class PumpkinSpice
 
 			itemRegistry.registerAll(ModItems.latte);
         }
+    }
+    
+    public static class itemRegistry
+    {
+    	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    	
+    	public static final RegistryObject<Item> latte = ITEMS.register("latte", () -> ModItems.latte);
     }
 }

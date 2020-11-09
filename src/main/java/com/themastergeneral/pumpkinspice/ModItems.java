@@ -40,5 +40,5 @@ public class ModItems {
 	static EffectInstance haste = new EffectInstance(Effects.HASTE, 10000, 4, true, false);
 	
 	static Food pumpkinspice = (new Food.Builder()).hunger(3).saturation(1.0F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).setAlwaysEdible().build();
-	public static LatteItem latte = new LatteItem((new Item.Properties()).group(ItemGroup.FOOD).food(pumpkinspice), "latte");
+	public static LatteItem latte = new LatteItem((new Item.Properties()).group(ItemGroup.FOOD).food(pumpkinspice));
 }
