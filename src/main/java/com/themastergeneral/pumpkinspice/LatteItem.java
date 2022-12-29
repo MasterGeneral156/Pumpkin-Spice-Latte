@@ -1,5 +1,5 @@
 /*
-	Project:	Pumpkin Spice Latte 1.16
+	Project:	Pumpkin Spice Latte 1.17
 	File:		com.themastergeneral.pumpkinspice.LatteItem
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte

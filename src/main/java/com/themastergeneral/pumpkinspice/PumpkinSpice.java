@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.16
+	Project:	Pumpkin Spice Latte 1.17
 	File:		com.themastergeneral.pumpkinspice.PumpkinSpice
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
 	License:	MIT License
 
-				Copyright (c) 2017 MasterGeneral156
+				Copyright (c) 2022 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -27,14 +27,14 @@
 */
 package com.themastergeneral.pumpkinspice;
 
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;

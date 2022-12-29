@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.16
+	Project:	Pumpkin Spice Latte 1.17
 	File:		com.themastergeneral.pumpkinspice.ModItems
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
 	License:	MIT License
 
-				Copyright (c) 2017 MasterGeneral156
+				Copyright (c) 2022 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -27,18 +27,19 @@
 */
 package com.themastergeneral.pumpkinspice;
 
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 
 public class ModItems {
 	//@TODO: Yeah fix this.
-	static EffectInstance speed = new EffectInstance(Effects.SPEED, 10000, 3, true, false);
-	static EffectInstance jump = new EffectInstance(Effects.JUMP_BOOST, 10000, 1, true, false);
-	static EffectInstance haste = new EffectInstance(Effects.HASTE, 10000, 1, true, false);
+	static MobEffectInstance speed = new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10000, 1, true, false);
+	static MobEffectInstance jump = new MobEffectInstance(MobEffects.JUMP, 10000, 1, true, false);
+	static MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 10000, 1, true, false);
 	
-	static Food pumpkinspice = (new Food.Builder()).hunger(3).saturation(1.0F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).setAlwaysEdible().build();
-	public static LatteItem latte = new LatteItem((new Item.Properties()).group(ItemGroup.FOOD).food(pumpkinspice));
+	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).build();
+	
+	public static LatteItem latte = new LatteItem((new Item.Properties()).tab(CreativeModeTab.TAB_FOOD).food(pumpkinSpice));
 }
