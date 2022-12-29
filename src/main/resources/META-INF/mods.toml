@@ -1,7 +1,8 @@
 modLoader="javafml"
-loaderVersion="[37,)"
+loaderVersion="[40,)"
 issueTrackerURL="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/issues"
-license="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/blob/1.17/LICENSE.md"
+license="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/blob/1.18/LICENSE.md"
+
 [[mods]]
 modId="pumpkinspice"
 version="1.1.0"
@@ -12,6 +13,7 @@ logoFile="logo.png" #optional
 credits="White girls, everywhere..."
 authors="TheMasterGeneral"
 description="Feeling down? Drink a Pumpkin Spice Latte!"
+
 [[dependencies.pumpkinspice]]
     modId="ctdcore"
     mandatory=true
