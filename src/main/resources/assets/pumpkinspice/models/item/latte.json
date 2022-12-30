@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "pumpkinspice:items/latte_64"
+        "layer0": "pumpkinspice:item/latte_64"
     }
 }
