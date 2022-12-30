@@ -1,5 +1,5 @@
 /*
-	Project:	Pumpkin Spice Latte 1.18
+	Project:	Pumpkin Spice Latte 1.19
 	File:		com.themastergeneral.pumpkinspice.PumpkinSpice
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
@@ -29,14 +29,11 @@ package com.themastergeneral.pumpkinspice;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
 import org.apache.logging.log4j.LogManager;
@@ -54,26 +51,15 @@ public class PumpkinSpice
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
+        MinecraftForge.EVENT_BUS.register(this);
+        
         // Register ourselves for server and other game events we are interested in
         itemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("Hello from Pumpkin Spice Latte!");
-    }
-    
-    @Mod.EventBusSubscriber(modid = "pumpkinspice", bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class Registration
-    {
-		@SubscribeEvent
-        public static void registerItems(final RegistryEvent.Register<Item> event)
-        {
-			IForgeRegistry<Item> itemRegistry = event.getRegistry();
-
-			itemRegistry.registerAll(ModItems.latte);
-        }
     }
     
     public static class itemRegistry

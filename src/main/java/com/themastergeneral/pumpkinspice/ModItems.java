@@ -1,5 +1,5 @@
 /*
-	Project:	Pumpkin Spice Latte 1.18
+	Project:	Pumpkin Spice Latte 1.19
 	File:		com.themastergeneral.pumpkinspice.ModItems
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
@@ -30,7 +30,6 @@ package com.themastergeneral.pumpkinspice;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 public class ModItems {
@@ -41,5 +40,5 @@ public class ModItems {
 	
 	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).build();
 	
-	public static LatteItem latte = new LatteItem((new Item.Properties()).tab(CreativeModeTab.TAB_FOOD).food(pumpkinSpice));
+	public static LatteItem latte = new LatteItem((new Item.Properties()).food(pumpkinSpice));
 }
