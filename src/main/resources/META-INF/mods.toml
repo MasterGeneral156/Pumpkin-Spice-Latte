@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[44.1,)"
+loaderVersion="[44,)"
 issueTrackerURL="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/issues"
 license="https://github.com/MasterGeneral156/Pumpkin-Spice-Latte/blob/1.19/LICENSE.md"
 
 [[mods]]
 modId="pumpkinspice"
-version="1.1.2"
+version="1.1.2b"
 displayName="Pumpkin Spice Latte"
 updateJSONURL="https://raw.githubusercontent.com/MasterGeneral156/Version/master/PumpkinSpice.json"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/pumpkin-spice-latte"
@@ -17,6 +17,6 @@ description="Feeling down? Drink a Pumpkin Spice Latte!"
 [[dependencies.pumpkinspice]]
     modId="ctdcore"
     mandatory=true
-    versionRange="[2.2.2,]"
+    versionRange="[2.2,]"
     ordering="BEFORE"
     side="BOTH"
