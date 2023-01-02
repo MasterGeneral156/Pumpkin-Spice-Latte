@@ -27,8 +27,11 @@
 */
 package com.themastergeneral.pumpkinspice;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -48,13 +51,15 @@ public class PumpkinSpice
     public static String MODID = "pumpkinspice";
 
     public PumpkinSpice() {
+    	MinecraftForge.EVENT_BUS.register(this);
+    	
         // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-
-        MinecraftForge.EVENT_BUS.register(this);
+    	IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+    	modbus.addListener(this::setup);
+        modbus.addListener(this::fillTab);
         
         // Register ourselves for server and other game events we are interested in
-        itemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        itemRegistry.ITEMS.register(modbus);
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -68,4 +73,10 @@ public class PumpkinSpice
     	
     	public static final RegistryObject<Item> latte = ITEMS.register("latte", () -> ModItems.latte);
     }
+    
+    private void fillTab(CreativeModeTabEvent.BuildContents ev)
+	{
+		if (ev.getTab() == CreativeModeTabs.FOOD_AND_DRINKS)
+			ev.accept(ModItems.latte);
+	}
 }
