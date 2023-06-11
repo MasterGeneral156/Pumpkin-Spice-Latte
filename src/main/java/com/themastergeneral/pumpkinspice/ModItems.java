@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.19
+	Project:	Pumpkin Spice Latte 1.20
 	File:		com.themastergeneral.pumpkinspice.ModItems
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
 	License:	MIT License
 
-				Copyright (c) 2022 MasterGeneral156
+				Copyright (c) 2023 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -33,11 +33,11 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
 public class ModItems {
-	//@TODO: Yeah fix this.
 	static MobEffectInstance speed = new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10000, 1, true, false);
 	static MobEffectInstance jump = new MobEffectInstance(MobEffects.JUMP, 10000, 1, true, false);
 	static MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 10000, 1, true, false);
 	
+	//TODO Fix dep notice
 	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).build();
 	
 	public static LatteItem latte = new LatteItem((new Item.Properties()).food(pumpkinSpice));
