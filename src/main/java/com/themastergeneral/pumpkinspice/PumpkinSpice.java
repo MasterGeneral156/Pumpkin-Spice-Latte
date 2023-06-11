@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.19
+	Project:	Pumpkin Spice Latte 1.20
 	File:		com.themastergeneral.pumpkinspice.PumpkinSpice
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
 	License:	MIT License
 
-				Copyright (c) 2022 MasterGeneral156
+				Copyright (c) 2023 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ package com.themastergeneral.pumpkinspice;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -74,9 +74,9 @@ public class PumpkinSpice
     	public static final RegistryObject<Item> latte = ITEMS.register("latte", () -> ModItems.latte);
     }
     
-    private void fillTab(CreativeModeTabEvent.BuildContents ev)
+    private void fillTab(BuildCreativeModeTabContentsEvent ev)
 	{
-		if (ev.getTab() == CreativeModeTabs.FOOD_AND_DRINKS)
+		if (ev.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
 			ev.accept(ModItems.latte);
 	}
 }
