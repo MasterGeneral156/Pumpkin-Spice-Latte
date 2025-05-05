@@ -40,5 +40,5 @@ public class ModItems {
 	//TODO Fix dep notice
 	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).build();
 	
-	public static LatteItem latte = new LatteItem((new Item.Properties()).food(pumpkinSpice));
+	public static LatteItem latte = new LatteItem(new Item.Properties().food(pumpkinSpice));
 }

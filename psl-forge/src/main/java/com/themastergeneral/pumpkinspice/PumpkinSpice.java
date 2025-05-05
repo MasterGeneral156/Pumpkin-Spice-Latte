@@ -29,6 +29,7 @@ package com.themastergeneral.pumpkinspice;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -66,7 +67,7 @@ public class PumpkinSpice
     {
         LOGGER.info("Hello from Pumpkin Spice Latte!");
     }
-    
+
     public static class itemRegistry
     {
     	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
@@ -77,6 +78,6 @@ public class PumpkinSpice
     private void fillTab(BuildCreativeModeTabContentsEvent ev)
 	{
 		if (ev.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
-			ev.accept(ModItems.latte);
+			ev.accept(new ItemStack(ModItems.latte));
 	}
 }
