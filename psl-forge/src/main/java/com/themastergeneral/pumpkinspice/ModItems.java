@@ -38,7 +38,16 @@ public class ModItems {
 	static MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 10000, 1, true, false);
 	
 	//TODO Fix dep notice
-	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).effect(speed, 1.0F).effect(jump, 1.0F).effect(haste, 1.0F).build();
-	
-	public static LatteItem latte = new LatteItem(new Item.Properties().food(pumpkinSpice));
+	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F)..build();
+
+	public static LatteItem latte = new LatteItem(
+			new Item.Properties().stacksTo(16), // or however you want to configure it
+			new FoodProperties.Builder()
+					.nutrition(4)
+					.saturationModifier(0.1F)
+					.alwaysEdible()
+					.build(),
+			new LatteItem.PumpkinSpiceConsumable() // your custom consumable logic
+	);
+
 }

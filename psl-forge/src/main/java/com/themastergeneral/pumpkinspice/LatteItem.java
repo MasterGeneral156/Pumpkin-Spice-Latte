@@ -28,10 +28,39 @@
 package com.themastergeneral.pumpkinspice;
 
 import com.themastergeneral.ctdcore.item.CTDItem;
+import net.minecraft.core.Holder;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.ConsumableListener;
+import net.minecraft.world.level.Level;
 
-public class LatteItem extends CTDItem {
-
-	public LatteItem(Properties properties) {
-		super(properties);
+public class LatteItem extends ConsumableItem {
+	public LatteItem(Item.Properties properties, FoodProperties food, Consumable consumable) {
+		super(properties, food, consumable);
 	}
+
+	public static class PumpkinSpiceConsumable implements Consumable, ConsumableListener {
+		@Override
+		public void onConsume(Level level, LivingEntity entity, ItemStack stack, Consumable consumable) {
+			if (!level.isClientSide) {
+				entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
+				entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
+				entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 1));
+			}
+		}
+
+		@Override
+		public Holder<SoundEvent> sound() {
+			return Holder.direct(SoundEvents.GENERIC_DRINK.get()); // Or a custom sound
+		}
+	}
+
 }
+
