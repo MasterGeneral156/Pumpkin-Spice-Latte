@@ -33,12 +33,9 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
 public class ModItems {
-	static MobEffectInstance speed = new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10000, 1, true, false);
-	static MobEffectInstance jump = new MobEffectInstance(MobEffects.JUMP, 10000, 1, true, false);
-	static MobEffectInstance haste = new MobEffectInstance(MobEffects.DIG_SPEED, 10000, 1, true, false);
 	
 	//TODO Fix dep notice
-	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F)..build();
+	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).build();
 
 	public static LatteItem latte = new LatteItem(
 			new Item.Properties().stacksTo(16), // or however you want to configure it

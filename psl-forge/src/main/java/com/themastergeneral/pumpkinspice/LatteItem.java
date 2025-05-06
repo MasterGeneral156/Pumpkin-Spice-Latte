@@ -27,7 +27,6 @@
 */
 package com.themastergeneral.pumpkinspice;
 
-import com.themastergeneral.ctdcore.item.CTDItem;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -50,9 +49,9 @@ public class LatteItem extends ConsumableItem {
 		@Override
 		public void onConsume(Level level, LivingEntity entity, ItemStack stack, Consumable consumable) {
 			if (!level.isClientSide) {
-				entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1));
-				entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 1));
-				entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 1));
+				entity.addEffect(new MobEffectInstance(MobEffects.SPEED, 200, 1));
+				entity.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 200, 1));
+				entity.addEffect(new MobEffectInstance(MobEffects.HASTE, 200, 1));
 			}
 		}
 
