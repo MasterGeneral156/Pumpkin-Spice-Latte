@@ -1,1 +1,8 @@
 /pumpkin-spice-latte-forge/mcmodsrepo
+/pumpkin-spice-latte-neo/build
+/pumpkin-spice-latte-neo/mcmodsrepo
+/pumpkin-spice-latte-neo/run
+/pumpkin-spice-latte-neo/.gradle
+*.iml
+*.ipr
+*.iws
