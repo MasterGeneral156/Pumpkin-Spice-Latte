@@ -46,7 +46,7 @@ import org.apache.logging.log4j.Logger;
 public class PumpkinSpice
 {
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static String MODID = "pumpkinspice";
 
     public PumpkinSpice(FMLJavaModLoadingContext context) {

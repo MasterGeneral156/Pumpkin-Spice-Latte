@@ -47,16 +47,19 @@ public class LatteItem extends CTDItem {
         super(key, properties);
     }
 
-	public static class PumpkinSpiceConsumable implements ConsumableListener {
-		@Override
-		public void onConsume(Level level, LivingEntity entity, ItemStack stack, Consumable consumable) {
-			if (!level.isClientSide()) {
-				entity.addEffect(new MobEffectInstance(MobEffects.SPEED, 200, 1));
-				entity.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 200, 1));
-				entity.addEffect(new MobEffectInstance(MobEffects.HASTE, 200, 1));
-			}
-		}
-	}
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity)
+    {
+        if (!level.isClientSide()) {
+            entity.addEffect(new MobEffectInstance(MobEffects.SPEED, 200, 1));
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 200, 1));
+            entity.addEffect(new MobEffectInstance(MobEffects.HASTE, 200, 1));
+        }
+
+        super.finishUsingItem(stack, level, entity);
+
+        return stack;
+    }
 
 }
 
