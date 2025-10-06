@@ -31,20 +31,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.DeferredRegister;
 
 public class ModItems {
 	
 	//TODO Fix dep notice
 	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).build();
 
-	public static LatteItem latte = new LatteItem(
-			new Item.Properties().stacksTo(16), // or however you want to configure it
-			new FoodProperties.Builder()
-					.nutrition(4)
-					.saturationModifier(0.1F)
-					.alwaysEdible()
-					.build(),
-			new LatteItem.PumpkinSpiceConsumable() // your custom consumable logic
-	);
+	public static LatteItem latte = new LatteItem(PumpkinSpice.itemRegistry.ITEMS.key("latte"), new Item.Properties().food(pumpkinSpice));
 
 }
