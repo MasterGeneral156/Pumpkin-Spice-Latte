@@ -36,7 +36,7 @@ import net.minecraftforge.registries.DeferredRegister;
 public class ModItems {
 	
 	//TODO Fix dep notice
-	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).build();
+	static final FoodProperties pumpkinSpice = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).alwaysEdible().build();
 
 	public static LatteItem latte = new LatteItem(PumpkinSpice.itemRegistry.ITEMS.key("latte"), new Item.Properties().food(pumpkinSpice));
 
