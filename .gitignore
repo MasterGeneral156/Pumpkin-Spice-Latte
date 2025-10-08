@@ -6,3 +6,6 @@
 *.iml
 *.ipr
 *.iws
+/psl-forge/build
+/psl-forge/.idea
+/psl-forge/.gradle
