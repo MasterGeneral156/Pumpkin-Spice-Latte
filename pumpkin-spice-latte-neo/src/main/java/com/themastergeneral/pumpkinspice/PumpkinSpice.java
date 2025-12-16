@@ -69,8 +69,6 @@ public class PumpkinSpice
     {
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
 
-        //public static final DeferredItem<Item> latte = ITEMS.registerSimpleItem("latte", new Item.Properties().food(pumpkinSpice));
-
         public static final DeferredItem<Item> latte = ITEMS.registerItem(
                 "latte",
                 LatteItem::new, // The factory that the properties will be passed into.
