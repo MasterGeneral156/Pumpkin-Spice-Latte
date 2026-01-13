@@ -1,11 +1,11 @@
 /*
-	Project:	Pumpkin Spice Latte 1.21
+	Project:	Pumpkin Spice Latte 26.1
 	File:		com.themastergeneral.pumpkinspice.PumpkinSpice
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
 	License:	MIT License
 
-				Copyright (c) 2025 MasterGeneral156
+				Copyright (c) 2026 MasterGeneral156
 				
 				Permission is hereby granted, free of charge, to any person obtaining a copy
 				of this software and associated documentation files (the "Software"), to deal
