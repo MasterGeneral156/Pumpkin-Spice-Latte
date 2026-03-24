@@ -6,7 +6,7 @@
     ],
     "key": {
 		"S": "minecraft:sugar",
-		"W": "minecraft:water_bucket",
+		"W": "#c:buckets/water",
 		"P": "#c:pumpkins"
     },
     "result": {
