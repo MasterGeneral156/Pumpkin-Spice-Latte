@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PS",
+        "W "
+    ],
+    "key": {
+		"S": "minecraft:sugar",
+		"W": "#c:drinks/watery",
+		"P": "#c:pumpkins"
+    },
+    "result": {
+        "id": "pumpkinspice:latte",
+		"count": 1
+    }
+}
