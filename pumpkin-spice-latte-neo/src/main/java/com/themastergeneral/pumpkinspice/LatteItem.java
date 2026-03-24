@@ -27,20 +27,13 @@
 */
 package com.themastergeneral.pumpkinspice;
 
-import com.themastergeneral.ctdcore.item.CTDItem;
-import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.Consumable;
-import net.minecraft.world.item.component.ConsumableListener;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.NonNull;
 
 public class LatteItem extends Item {
 	public LatteItem(Item.Properties properties) {
@@ -48,7 +41,7 @@ public class LatteItem extends Item {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity)
+    public @NonNull ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity)
     {
         if (!level.isClientSide()) {
             entity.addEffect(new MobEffectInstance(MobEffects.SPEED, 200, 1));
