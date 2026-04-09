@@ -1,5 +1,5 @@
 /*
-	Project:	Pumpkin Spice Latte 26.1
+	Project:	Pumpkin Spice Latte 26.1.1
 	File:		com.themastergeneral.pumpkinspice.PumpkinSpice
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
