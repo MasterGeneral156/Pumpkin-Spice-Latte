@@ -1,0 +1,27 @@
+{
+  "parent": "pumpkinspice:latte_crafted",
+  "display": {
+    "icon": {
+      "id": "pumpkinspice:latte"
+    },
+    "title": {
+      "translate": "advancement.pumpkinspice.drink"
+    },
+    "description": {
+      "translate": "advancement.pumpkinspice.drink.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "drink_latte": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "pumpkinspice:latte"
+          ]
+        }
+      }
+    }
+  }
+}
