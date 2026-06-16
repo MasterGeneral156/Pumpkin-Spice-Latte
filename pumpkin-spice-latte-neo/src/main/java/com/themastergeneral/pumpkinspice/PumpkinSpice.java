@@ -72,7 +72,7 @@ public class PumpkinSpice
         public static final DeferredItem<Item> latte = ITEMS.registerItem(
                 "latte",
                 LatteItem::new, // The factory that the properties will be passed into.
-                new Item.Properties().food(pumpkinSpice) // The properties to use.
+                props -> props // A unary operator of the properties to use.
         );
     }
     

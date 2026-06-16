@@ -37,7 +37,7 @@ import org.jspecify.annotations.NonNull;
 
 public class LatteItem extends Item {
 	public LatteItem(Item.Properties properties) {
-        super(properties);
+        super(properties.food(PumpkinSpice.pumpkinSpice));
     }
 
     @Override
