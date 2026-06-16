@@ -1,3 +1,7 @@
 {
-	"item.pumpkinspice.latte"="Pumpkin Spice Latte"
+	"item.pumpkinspice.latte"="Pumpkin Spice Latte",
+	"advancement.pumpkinspice.craft"="Pumpkin Spice Latte",
+	"advancement.pumpkinspice.craft.desc"="Craft a Pumpkin Spice Latte",
+	"advancement.pumpkinspice.drink"="White Girl Power",
+	"advancement.pumpkinspice.drink.desc"="Drink a Pumpkin Spice Latte"
 }

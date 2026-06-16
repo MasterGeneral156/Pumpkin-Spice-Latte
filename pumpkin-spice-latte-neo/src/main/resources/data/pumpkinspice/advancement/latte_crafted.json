@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:glass_bottle"
+    },
+    "title": {
+      "translate": "advancement.pumpkinspice.craft"
+    },
+    "description": {
+      "translate": "advancement.pumpkinspice.craft.desc"
+    },
+    "frame": "task",
+    "background": "minecraft:textures/block/pumpkin_side.png"
+  },
+  "criteria": {
+    "crafted_latte": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "pumpkinspice:latte"
+      }
+    }
+  }
+}
