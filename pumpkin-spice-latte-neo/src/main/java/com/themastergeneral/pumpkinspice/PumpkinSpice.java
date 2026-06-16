@@ -1,5 +1,5 @@
 /*
-	Project:	Pumpkin Spice Latte 26.1.1
+	Project:	Pumpkin Spice Latte 26.2
 	File:		com.themastergeneral.pumpkinspice.PumpkinSpice
 	Author:		TheMasterGeneral
 	Website: 	https://github.com/MasterGeneral156/Pumpkin-Spice-Latte
@@ -26,7 +26,6 @@
 				SOFTWARE.
 */
 package com.themastergeneral.pumpkinspice;
-
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -72,7 +71,7 @@ public class PumpkinSpice
         public static final DeferredItem<Item> latte = ITEMS.registerItem(
                 "latte",
                 LatteItem::new, // The factory that the properties will be passed into.
-                new Item.Properties().food(pumpkinSpice) // The properties to use.
+                props -> props // A unary operator of the properties to use.
         );
     }
     
