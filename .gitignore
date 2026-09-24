@@ -9,3 +9,6 @@
 /psl-forge/build
 /psl-forge/.idea
 /psl-forge/.gradle
+/.gradle
+/build
+/run
